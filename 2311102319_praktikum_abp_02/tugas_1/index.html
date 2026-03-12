@@ -1,0 +1,1347 @@
+<!doctype html>
+<html lang="id" data-bs-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ramadan Kareem 🌙</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --gold: #d4af37;
+        --gold-light: #f5e6a3;
+        --dark-bg: #0a1628;
+        --dark-card: #121f3d;
+      }
+      body {
+        font-family: "Poppins", sans-serif;
+        background: linear-gradient(
+          135deg,
+          #0a1628 0%,
+          #1a1a3e 50%,
+          #0d2137 100%
+        );
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+      .font-amiri {
+        font-family: "Amiri", serif;
+      }
+      .text-gold {
+        color: var(--gold) !important;
+      }
+      .bg-dark-card {
+        background-color: var(--dark-card) !important;
+      }
+      .btn-gold {
+        background: linear-gradient(135deg, var(--gold), #b8962e);
+        color: #1a1a2e;
+        border: none;
+        font-weight: 600;
+      }
+      .btn-gold:hover {
+        background: linear-gradient(135deg, var(--gold-light), var(--gold));
+        color: #1a1a2e;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+      }
+      .btn-outline-gold {
+        border: 2px solid var(--gold);
+        color: var(--gold);
+      }
+      .btn-outline-gold:hover {
+        background: var(--gold);
+        color: #1a1a2e;
+      }
+      .hero-section {
+        min-height: 100vh;
+        position: relative;
+      }
+      .mosque-silhouette {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        opacity: 0.08;
+        font-size: 15rem;
+        text-align: center;
+        color: var(--gold);
+        pointer-events: none;
+      }
+      .star {
+        position: absolute;
+        width: 3px;
+        height: 3px;
+        background: white;
+        border-radius: 50%;
+        animation: twinkle 2s infinite alternate;
+      }
+      @keyframes twinkle {
+        0% {
+          opacity: 0.2;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+      @keyframes pulse-glow {
+        0%,
+        100% {
+          box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+        }
+        50% {
+          box-shadow:
+            0 0 40px rgba(212, 175, 55, 0.6),
+            0 0 80px rgba(212, 175, 55, 0.2);
+        }
+      }
+      @keyframes confetti-fall {
+        0% {
+          transform: translateY(-100vh) rotate(0deg);
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(100vh) rotate(720deg);
+          opacity: 0;
+        }
+      }
+      .float-animation {
+        animation: float 4s ease-in-out infinite;
+      }
+      .crescent-moon {
+        font-size: 8rem;
+        color: var(--gold);
+        text-shadow:
+          0 0 40px rgba(212, 175, 55, 0.5),
+          0 0 80px rgba(212, 175, 55, 0.2);
+      }
+      .card-islamic {
+        background: rgba(18, 31, 61, 0.8);
+        border: 1px solid rgba(212, 175, 55, 0.2);
+        backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+      }
+      .card-islamic:hover {
+        border-color: var(--gold);
+        transform: translateY(-5px);
+        box-shadow:
+          0 15px 35px rgba(0, 0, 0, 0.3),
+          0 0 15px rgba(212, 175, 55, 0.1);
+      }
+      .thr-box {
+        background: linear-gradient(135deg, #1a3a2a, #0d2137);
+        border: 2px solid var(--gold);
+        cursor: pointer;
+        transition: all 0.4s ease;
+        animation: pulse-glow 3s infinite;
+      }
+      .thr-box:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 50px rgba(212, 175, 55, 0.4);
+      }
+      .confetti {
+        position: fixed;
+        width: 10px;
+        height: 10px;
+        top: -10px;
+        z-index: 9999;
+        animation: confetti-fall 3s linear forwards;
+      }
+      .modal-thr .modal-content {
+        background: linear-gradient(135deg, #0d2137, #1a1a3e, #0d2137);
+        border: 2px solid var(--gold);
+        box-shadow: 0 0 60px rgba(212, 175, 55, 0.3);
+      }
+      .envelope {
+        width: 200px;
+        height: 140px;
+        background: linear-gradient(135deg, #c0392b, #e74c3c);
+        border-radius: 8px;
+        position: relative;
+        margin: 0 auto;
+        cursor: pointer;
+        transition: all 0.5s ease;
+        overflow: hidden;
+      }
+      .envelope::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 70px;
+        background: linear-gradient(135deg, #a93226, #c0392b);
+        clip-path: polygon(0 0, 50% 70%, 100% 0);
+        z-index: 2;
+        transition: all 0.5s ease;
+      }
+      .envelope.opened::before {
+        clip-path: polygon(0 0, 50% -50%, 100% 0);
+      }
+      .envelope-content {
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%) translateY(20px);
+        opacity: 0;
+        transition: all 0.5s ease 0.3s;
+        text-align: center;
+        width: 80%;
+      }
+      .envelope.opened .envelope-content {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+      }
+      .countdown-item {
+        min-width: 80px;
+      }
+      .lantern {
+        animation: float 3s ease-in-out infinite;
+      }
+      .lantern:nth-child(2) {
+        animation-delay: 0.5s;
+      }
+      .lantern:nth-child(3) {
+        animation-delay: 1s;
+      }
+      .scroll-indicator {
+        animation: float 2s ease-in-out infinite;
+      }
+    </style>
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark fixed-top"
+      style="
+        background: rgba(10, 22, 40, 0.9);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+      "
+    >
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+          <i class="bi bi-moon-stars-fill text-gold fs-4"></i>
+          <span class="fw-bold text-gold font-amiri fs-4">Ramadan Kareem</span>
+        </a>
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navMenu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto gap-1">
+            <li class="nav-item">
+              <a class="nav-link" href="#beranda"
+                ><i class="bi bi-house me-1"></i>Beranda</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#tentang"
+                ><i class="bi bi-info-circle me-1"></i>Tentang</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#jadwal"
+                ><i class="bi bi-clock me-1"></i>Jadwal</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#doa"
+                ><i class="bi bi-book me-1"></i>Doa</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#thr"
+                ><i class="bi bi-gift me-1"></i>Kejutan</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section
+      id="beranda"
+      class="hero-section d-flex align-items-center justify-content-center text-center position-relative"
+    >
+      <div
+        id="stars-container"
+        class="position-absolute top-0 start-0 w-100 h-100"
+      ></div>
+
+      <div class="container position-relative" style="z-index: 2">
+        <div class="d-flex justify-content-center gap-4 mb-4">
+          <div class="lantern">
+            <i
+              class="bi bi-lamp-fill text-gold fs-1"
+              style="filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.6))"
+            ></i>
+          </div>
+          <div class="lantern">
+            <i
+              class="bi bi-lamp-fill text-gold fs-1"
+              style="filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.6))"
+            ></i>
+          </div>
+          <div class="lantern">
+            <i
+              class="bi bi-lamp-fill text-gold fs-1"
+              style="filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.6))"
+            ></i>
+          </div>
+        </div>
+
+        <div class="crescent-moon float-animation mb-3">&#9790;</div>
+        <h1 class="display-2 fw-bold text-gold font-amiri mb-3">
+          Ramadan Kareem
+        </h1>
+        <p class="lead text-light mb-2 fs-4 font-amiri">
+          &#1576;&#1587;&#1605; &#1575;&#1604;&#1604;&#1607;
+          &#1575;&#1604;&#1585;&#1581;&#1605;&#1606;
+          &#1575;&#1604;&#1585;&#1581;&#1610;&#1605;
+        </p>
+        <p class="text-white-50 mb-4 fs-5">
+          Marhaban Ya Ramadan — Selamat Menunaikan Ibadah Puasa
+        </p>
+
+        <div
+          class="d-flex justify-content-center gap-3 mb-5 flex-wrap"
+          id="countdown"
+        >
+          <div
+            class="countdown-item bg-dark-card rounded-3 p-3 text-center border border-secondary border-opacity-25"
+          >
+            <div class="display-6 fw-bold text-gold" id="days">00</div>
+            <small class="text-white-50">Hari</small>
+          </div>
+          <div
+            class="countdown-item bg-dark-card rounded-3 p-3 text-center border border-secondary border-opacity-25"
+          >
+            <div class="display-6 fw-bold text-gold" id="hours">00</div>
+            <small class="text-white-50">Jam</small>
+          </div>
+          <div
+            class="countdown-item bg-dark-card rounded-3 p-3 text-center border border-secondary border-opacity-25"
+          >
+            <div class="display-6 fw-bold text-gold" id="minutes">00</div>
+            <small class="text-white-50">Menit</small>
+          </div>
+          <div
+            class="countdown-item bg-dark-card rounded-3 p-3 text-center border border-secondary border-opacity-25"
+          >
+            <div class="display-6 fw-bold text-gold" id="seconds">00</div>
+            <small class="text-white-50">Detik</small>
+          </div>
+        </div>
+
+        <a
+          href="#thr"
+          class="btn btn-gold btn-lg px-5 py-3 rounded-pill shadow-lg fs-5"
+        >
+          <i class="bi bi-gift-fill me-2"></i>Buka Kejutan Ramadan
+        </a>
+      </div>
+
+      <div
+        class="position-absolute bottom-0 start-50 translate-middle-x mb-4 scroll-indicator"
+      >
+        <a href="#tentang" class="text-gold text-decoration-none">
+          <i class="bi bi-chevron-double-down fs-3"></i>
+        </a>
+      </div>
+    </section>
+
+    <section id="tentang" class="py-5">
+      <div class="container py-5">
+        <div class="text-center mb-5">
+          <i class="bi bi-moon-stars text-gold display-4 mb-3 d-block"></i>
+          <h2 class="display-5 fw-bold text-gold font-amiri">
+            Tentang Ramadan
+          </h2>
+          <div
+            class="mx-auto mt-3"
+            style="width: 80px; height: 3px; background: var(--gold)"
+          ></div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div
+              class="card card-islamic rounded-4 h-100 p-4 text-center border-0"
+            >
+              <div class="mb-3">
+                <i class="bi bi-book-half text-gold display-4"></i>
+              </div>
+              <h5 class="text-gold fw-bold">Al-Quran Diturunkan</h5>
+              <p class="text-white-50 small">
+                Bulan Ramadan adalah bulan di mana Al-Quran diturunkan sebagai
+                petunjuk bagi manusia dan penjelasan mengenai petunjuk itu. (QS.
+                Al-Baqarah: 185)
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div
+              class="card card-islamic rounded-4 h-100 p-4 text-center border-0"
+            >
+              <div class="mb-3">
+                <i class="bi bi-heart-fill text-gold display-4"></i>
+              </div>
+              <h5 class="text-gold fw-bold">Pahala Berlipat</h5>
+              <p class="text-white-50 small">
+                Setiap amal kebaikan di bulan Ramadan akan dilipatgandakan
+                pahalanya. Ini adalah bulan penuh berkah dan ampunan dari Allah
+                SWT.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div
+              class="card card-islamic rounded-4 h-100 p-4 text-center border-0"
+            >
+              <div class="mb-3">
+                <i class="bi bi-door-open-fill text-gold display-4"></i>
+              </div>
+              <h5 class="text-gold fw-bold">Pintu Surga Dibuka</h5>
+              <p class="text-white-50 small">
+                Di bulan Ramadan, pintu-pintu surga dibuka, pintu-pintu neraka
+                ditutup, dan setan-setan dibelenggu. (HR. Bukhari & Muslim)
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4 mt-4">
+          <div class="col-lg-6">
+            <div class="card card-islamic rounded-4 p-4 border-0">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-star-fill text-gold fs-2 mt-1"></i>
+                <div>
+                  <h5 class="text-gold fw-bold mb-2">Lailatul Qadar</h5>
+                  <p class="text-white-50 small mb-0">
+                    Malam yang lebih baik dari seribu bulan. Terdapat pada 10
+                    malam terakhir bulan Ramadan, terutama malam-malam ganjil.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="card card-islamic rounded-4 p-4 border-0">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-people-fill text-gold fs-2 mt-1"></i>
+                <div>
+                  <h5 class="text-gold fw-bold mb-2">Silaturahmi & Berbagi</h5>
+                  <p class="text-white-50 small mb-0">
+                    Ramadan mengajarkan empati dan kepedulian. Berbagi dengan
+                    sesama melalui zakat, infaq, dan sedekah adalah amalan yang
+                    sangat dianjurkan.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="jadwal" class="py-5" style="background: rgba(0, 0, 0, 0.2)">
+      <div class="container py-5">
+        <div class="text-center mb-5">
+          <i class="bi bi-clock-history text-gold display-4 mb-3 d-block"></i>
+          <h2 class="display-5 fw-bold text-gold font-amiri">
+            Jadwal Imsakiyah
+          </h2>
+          <p class="text-white-50">Perkiraan waktu sholat & imsakiyah</p>
+          <div
+            class="mx-auto mt-3"
+            style="width: 80px; height: 3px; background: var(--gold)"
+          ></div>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div
+              class="card card-islamic rounded-4 p-0 border-0 overflow-hidden"
+            >
+              <div
+                class="p-4 text-center"
+                style="
+                  background: linear-gradient(
+                    135deg,
+                    rgba(212, 175, 55, 0.15),
+                    rgba(212, 175, 55, 0.05)
+                  );
+                "
+              >
+                <h4 class="text-gold fw-bold mb-1">
+                  <i class="bi bi-geo-alt-fill me-2"></i>Jakarta & Sekitarnya
+                </h4>
+                <p class="text-white-50 small mb-0">
+                  Waktu dapat berbeda tergantung lokasi
+                </p>
+              </div>
+              <div class="table-responsive">
+                <table
+                  class="table table-dark table-hover mb-0 align-middle"
+                  style="background: transparent"
+                >
+                  <thead>
+                    <tr style="border-bottom: 2px solid var(--gold)">
+                      <th class="text-gold ps-4 py-3">Waktu</th>
+                      <th class="text-gold text-center py-3">Jam</th>
+                      <th class="text-gold text-end pe-4 py-3">Keterangan</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td class="ps-4 py-3">
+                        <i class="bi bi-moon-fill text-gold me-2"></i>Imsak
+                      </td>
+                      <td class="text-center py-3">
+                        <span
+                          class="badge bg-dark border border-secondary px-3 py-2"
+                          >04:20</span
+                        >
+                      </td>
+                      <td class="text-end pe-4 py-3 text-white-50 small">
+                        Berhenti makan & minum
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="ps-4 py-3">
+                        <i class="bi bi-sunrise text-gold me-2"></i>Subuh
+                      </td>
+                      <td class="text-center py-3">
+                        <span
+                          class="badge bg-dark border border-secondary px-3 py-2"
+                          >04:30</span
+                        >
+                      </td>
+                      <td class="text-end pe-4 py-3 text-white-50 small">
+                        Sholat Subuh
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="ps-4 py-3">
+                        <i class="bi bi-sun text-gold me-2"></i>Dzuhur
+                      </td>
+                      <td class="text-center py-3">
+                        <span
+                          class="badge bg-dark border border-secondary px-3 py-2"
+                          >11:54</span
+                        >
+                      </td>
+                      <td class="text-end pe-4 py-3 text-white-50 small">
+                        Sholat Dzuhur
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="ps-4 py-3">
+                        <i class="bi bi-cloud-sun text-gold me-2"></i>Ashar
+                      </td>
+                      <td class="text-center py-3">
+                        <span
+                          class="badge bg-dark border border-secondary px-3 py-2"
+                          >15:12</span
+                        >
+                      </td>
+                      <td class="text-end pe-4 py-3 text-white-50 small">
+                        Sholat Ashar
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="ps-4 py-3">
+                        <i class="bi bi-sunset text-gold me-2"></i>Maghrib
+                      </td>
+                      <td class="text-center py-3">
+                        <span
+                          class="badge bg-dark border border-secondary px-3 py-2"
+                          >17:56</span
+                        >
+                      </td>
+                      <td class="text-end pe-4 py-3 text-white-50 small">
+                        Buka Puasa & Sholat
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="ps-4 py-3">
+                        <i class="bi bi-moon-stars text-gold me-2"></i>Isya
+                      </td>
+                      <td class="text-center py-3">
+                        <span
+                          class="badge bg-dark border border-secondary px-3 py-2"
+                          >19:05</span
+                        >
+                      </td>
+                      <td class="text-end pe-4 py-3 text-white-50 small">
+                        Sholat Isya & Tarawih
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="doa" class="py-5">
+      <div class="container py-5">
+        <div class="text-center mb-5">
+          <i class="bi bi-journal-text text-gold display-4 mb-3 d-block"></i>
+          <h2 class="display-5 fw-bold text-gold font-amiri">
+            Doa-Doa Ramadan
+          </h2>
+          <div
+            class="mx-auto mt-3"
+            style="width: 80px; height: 3px; background: var(--gold)"
+          ></div>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="card card-islamic rounded-4 p-4 h-100 border-0">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <span
+                  class="badge rounded-pill bg-dark border border-secondary px-3 py-2"
+                  >01</span
+                >
+                <h5 class="text-gold fw-bold mb-0">Doa Niat Puasa</h5>
+              </div>
+              <p class="text-center font-amiri fs-4 text-light my-3" dir="rtl">
+                نَوَيْتُ صَوْمَ غَدٍ عَنْ أَدَاءِ فَرْضِ شَهْرِ رَمَضَانَ هَذِهِ
+                السَّنَةِ لِلَّهِ تَعَالَى
+              </p>
+              <p class="text-white-50 small fst-italic">
+                "Nawaitu shauma ghadin 'an adaa'i fardhi syahri ramadhaana
+                haadzihis sanati lillaahi ta'aalaa."
+              </p>
+              <p class="text-white-50 small">
+                Artinya: Saya niat puasa esok hari untuk menunaikan fardhu di
+                bulan Ramadan tahun ini karena Allah Ta'ala.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card card-islamic rounded-4 p-4 h-100 border-0">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <span
+                  class="badge rounded-pill bg-dark border border-secondary px-3 py-2"
+                  >02</span
+                >
+                <h5 class="text-gold fw-bold mb-0">Doa Buka Puasa</h5>
+              </div>
+              <p class="text-center font-amiri fs-4 text-light my-3" dir="rtl">
+                اَللَّهُمَّ لَكَ صُمْتُ وَبِكَ آمَنْتُ وَعَلَى رِزْقِكَ
+                أَفْطَرْتُ
+              </p>
+              <p class="text-white-50 small fst-italic">
+                "Allahumma laka shumtu wa bika aamantu wa 'alaa rizqika
+                afthartu."
+              </p>
+              <p class="text-white-50 small">
+                Artinya: Ya Allah, karena-Mu aku berpuasa, dengan-Mu aku
+                beriman, dan dengan rezeki-Mu aku berbuka.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card card-islamic rounded-4 p-4 h-100 border-0">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <span
+                  class="badge rounded-pill bg-dark border border-secondary px-3 py-2"
+                  >03</span
+                >
+                <h5 class="text-gold fw-bold mb-0">Doa Lailatul Qadar</h5>
+              </div>
+              <p class="text-center font-amiri fs-4 text-light my-3" dir="rtl">
+                اللَّهُمَّ إِنَّكَ عَفُوٌّ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي
+              </p>
+              <p class="text-white-50 small fst-italic">
+                "Allahumma innaka 'afuwwun tuhibbul 'afwa fa'fu 'annii."
+              </p>
+              <p class="text-white-50 small">
+                Artinya: Ya Allah, Engkau Maha Pemaaf, Engkau suka memberi maaf,
+                maka maafkanlah aku.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card card-islamic rounded-4 p-4 h-100 border-0">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <span
+                  class="badge rounded-pill bg-dark border border-secondary px-3 py-2"
+                  >04</span
+                >
+                <h5 class="text-gold fw-bold mb-0">Doa Malam Ramadan</h5>
+              </div>
+              <p class="text-center font-amiri fs-4 text-light my-3" dir="rtl">
+                رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الآخِرَةِ حَسَنَةً
+                وَقِنَا عَذَابَ النَّارِ
+              </p>
+              <p class="text-white-50 small fst-italic">
+                "Rabbanaa aatinaa fid-dunyaa hasanatan wa fil aakhirati
+                hasanatan wa qinaa 'adzaaban-naar."
+              </p>
+              <p class="text-white-50 small">
+                Artinya: Ya Tuhan kami, berilah kami kebaikan di dunia dan
+                kebaikan di akhirat, dan lindungilah kami dari azab api neraka.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="thr" class="py-5" style="background: rgba(0, 0, 0, 0.2)">
+      <div class="container py-5">
+        <div class="text-center mb-5">
+          <i class="bi bi-gift-fill text-gold display-4 mb-3 d-block"></i>
+          <h2 class="display-5 fw-bold text-gold font-amiri">
+            Kejutan Ramadan
+          </h2>
+          <p class="text-white-50 fs-5">
+            Klik amplop di bawah untuk membuka kejutan spesial!
+          </p>
+          <div
+            class="mx-auto mt-3"
+            style="width: 80px; height: 3px; background: var(--gold)"
+          ></div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            <div
+              class="thr-box rounded-4 p-5 text-center"
+              id="thrBox"
+              data-bs-toggle="modal"
+              data-bs-target="#thrModal"
+            >
+              <div class="mb-4">
+                <div class="position-relative d-inline-block">
+                  <i
+                    class="bi bi-envelope-paper-heart-fill text-gold"
+                    style="
+                      font-size: 6rem;
+                      filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.5));
+                    "
+                  ></i>
+                  <span
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger fs-6 px-3"
+                  >
+                    1 <i class="bi bi-exclamation-lg"></i>
+                  </span>
+                </div>
+              </div>
+              <h3 class="text-gold fw-bold font-amiri mb-2">
+                Amplop THR Spesial
+              </h3>
+              <p class="text-white-50 mb-3">Ada kejutan menanti di dalamnya!</p>
+              <button
+                class="btn btn-gold btn-lg rounded-pill px-5 py-3 shadow"
+                type="button"
+              >
+                <i class="bi bi-box2-heart-fill me-2"></i>Buka Amplop Sekarang!
+              </button>
+              <div class="mt-3">
+                <span
+                  class="badge bg-dark text-gold border border-secondary px-3 py-2"
+                >
+                  <i class="bi bi-people-fill me-1"></i>Sudah dibuka 1,247 kali
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-3 mt-4 justify-content-center">
+          <div class="col-auto">
+            <button
+              class="btn btn-outline-gold rounded-pill px-4 py-2"
+              onclick="showQuote()"
+            >
+              <i class="bi bi-chat-quote-fill me-2"></i>Kata Mutiara
+            </button>
+          </div>
+          <div class="col-auto">
+            <button
+              class="btn btn-outline-gold rounded-pill px-4 py-2"
+              onclick="showDhikr()"
+            >
+              <i class="bi bi-hand-index-fill me-2"></i>Dzikir Counter
+            </button>
+          </div>
+          <div class="col-auto">
+            <button
+              class="btn btn-outline-gold rounded-pill px-4 py-2"
+              data-bs-toggle="modal"
+              data-bs-target="#duaModal"
+            >
+              <i class="bi bi-send-fill me-2"></i>Kirim Doa
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer
+      class="py-4 text-center"
+      style="
+        background: rgba(0, 0, 0, 0.3);
+        border-top: 1px solid rgba(212, 175, 55, 0.15);
+      "
+    >
+      <div class="container">
+        <p class="mb-2 text-gold font-amiri fs-5">
+          &#9790; Ramadan Kareem 1447 H &#9790;
+        </p>
+        <p class="text-white-50 small mb-0">
+          Semoga amal ibadah kita diterima oleh Allah SWT
+        </p>
+      </div>
+    </footer>
+
+    <div
+      class="modal fade modal-thr"
+      id="thrModal"
+      tabindex="-1"
+      data-bs-backdrop="static"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-4 overflow-hidden">
+          <div class="modal-body p-0">
+            <div id="thrStage1" class="text-center p-5">
+              <div class="mb-3">
+                <i class="bi bi-stars text-gold fs-1"></i>
+              </div>
+              <h3 class="text-gold font-amiri fw-bold mb-4">
+                Amplop THR Untukmu!
+              </h3>
+              <div class="envelope mx-auto mb-4" id="thrEnvelope">
+                <div class="envelope-content">
+                  <i class="bi bi-currency-dollar text-warning fs-3"></i>
+                </div>
+              </div>
+              <p class="text-white-50 mb-4">Klik amplop untuk membuka...</p>
+              <button
+                class="btn btn-gold btn-lg rounded-pill px-5"
+                id="openEnvelopeBtn"
+              >
+                <i class="bi bi-envelope-open-fill me-2"></i>Buka Amplop
+              </button>
+            </div>
+
+            <div id="thrStage2" class="text-center p-5 d-none">
+              <div class="mb-3">
+                <i
+                  class="bi bi-trophy-fill text-gold"
+                  style="
+                    font-size: 4rem;
+                    filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.6));
+                  "
+                ></i>
+              </div>
+              <div class="my-4">
+                <h2 class="text-gold font-amiri fw-bold display-5 mb-2">
+                  &#127881; SELAMAT! &#127881;
+                </h2>
+                <div
+                  class="p-4 rounded-3 my-4"
+                  style="
+                    background: linear-gradient(
+                      135deg,
+                      rgba(212, 175, 55, 0.2),
+                      rgba(212, 175, 55, 0.05)
+                    );
+                    border: 1px solid var(--gold);
+                  "
+                >
+                  <h3 class="text-gold fw-bold mb-1">Anda Mendapatkan THR!</h3>
+                  <p
+                    class="display-4 fw-bold text-light my-3"
+                    id="thrAmount"
+                  ></p>
+                  <p class="text-white-50 small mb-0">
+                    Tunjangan Hari Raya Ramadan 1447H
+                  </p>
+                </div>
+              </div>
+              <p class="text-white-50 mb-1 fs-5 font-amiri">
+                Taqabbalallahu minna wa minkum
+              </p>
+              <p class="text-white-50 small mb-4">
+                Semoga ibadah Ramadan kita diterima Allah SWT
+              </p>
+              <div class="d-flex gap-2 justify-content-center flex-wrap">
+                <button
+                  class="btn btn-gold rounded-pill px-4"
+                  onclick="shareResult()"
+                >
+                  <i class="bi bi-share-fill me-2"></i>Bagikan
+                </button>
+                <button
+                  class="btn btn-outline-gold rounded-pill px-4"
+                  data-bs-dismiss="modal"
+                  onclick="resetTHR()"
+                >
+                  <i class="bi bi-x-lg me-2"></i>Tutup
+                </button>
+                <button
+                  class="btn btn-outline-gold rounded-pill px-4"
+                  onclick="tryAgain()"
+                >
+                  <i class="bi bi-arrow-repeat me-2"></i>Coba Lagi
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade modal-thr" id="quoteModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-4">
+          <div class="modal-body text-center p-5">
+            <i
+              class="bi bi-chat-quote-fill text-gold display-4 mb-3 d-block"
+            ></i>
+            <h4 class="text-gold font-amiri fw-bold mb-4">
+              Kata Mutiara Ramadan
+            </h4>
+            <blockquote class="blockquote">
+              <p class="text-light fst-italic fs-5" id="quoteText"></p>
+            </blockquote>
+            <p class="text-gold small" id="quoteAuthor"></p>
+            <button
+              class="btn btn-outline-gold rounded-pill px-4 mt-3"
+              onclick="showQuote()"
+            >
+              <i class="bi bi-arrow-repeat me-2"></i>Quote Lain
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade modal-thr" id="dhikrModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-4">
+          <div class="modal-body text-center p-5">
+            <h4 class="text-gold font-amiri fw-bold mb-4">
+              <i class="bi bi-hand-index-fill me-2"></i>Dzikir Counter
+            </h4>
+            <div class="mb-4">
+              <select
+                class="form-select bg-dark text-light border-secondary mx-auto"
+                style="max-width: 300px"
+                id="dhikrSelect"
+              >
+                <option value="Subhanallah">Subhanallah</option>
+                <option value="Alhamdulillah">Alhamdulillah</option>
+                <option value="Allahu Akbar">Allahu Akbar</option>
+                <option value="Astaghfirullah">Astaghfirullah</option>
+              </select>
+            </div>
+            <div class="display-1 fw-bold text-gold mb-4" id="dhikrCount">
+              0
+            </div>
+            <p class="text-white-50 font-amiri fs-5" id="dhikrText">
+              Subhanallah
+            </p>
+            <div class="d-flex gap-2 justify-content-center flex-wrap">
+              <button
+                class="btn btn-gold btn-lg rounded-circle shadow"
+                style="width: 80px; height: 80px"
+                onclick="incrementDhikr()"
+              >
+                <i class="bi bi-plus-lg fs-2"></i>
+              </button>
+            </div>
+            <div class="mt-4">
+              <button
+                class="btn btn-outline-gold btn-sm rounded-pill px-3"
+                onclick="resetDhikr()"
+              >
+                <i class="bi bi-arrow-counterclockwise me-1"></i>Reset
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade modal-thr" id="duaModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content rounded-4">
+          <div class="modal-body text-center p-5">
+            <i class="bi bi-send-fill text-gold display-4 mb-3 d-block"></i>
+            <h4 class="text-gold font-amiri fw-bold mb-4">
+              Kirim Doa & Harapan
+            </h4>
+            <div class="mb-3">
+              <input
+                type="text"
+                class="form-control bg-dark text-light border-secondary rounded-pill px-4 py-3"
+                placeholder="Nama kamu..."
+                id="duaName"
+              />
+            </div>
+            <div class="mb-3">
+              <textarea
+                class="form-control bg-dark text-light border-secondary rounded-3 px-4 py-3"
+                rows="4"
+                placeholder="Tuliskan doa dan harapanmu di bulan Ramadan ini..."
+                id="duaText"
+              ></textarea>
+            </div>
+            <button
+              class="btn btn-gold rounded-pill px-5 py-2"
+              onclick="sendDua()"
+            >
+              <i class="bi bi-send-fill me-2"></i>Kirim Doa
+            </button>
+            <div id="duaSuccess" class="d-none mt-3">
+              <div
+                class="alert alert-success bg-transparent border border-success text-success rounded-3"
+              >
+                <i class="bi bi-check-circle-fill me-2"></i>Aamiin! Doa kamu
+                sudah terkirim.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="toast-container position-fixed bottom-0 end-0 p-3"
+      style="z-index: 9999"
+    >
+      <div
+        id="mainToast"
+        class="toast align-items-center border-0"
+        role="alert"
+        style="
+          background: var(--dark-card);
+          border: 1px solid var(--gold) !important;
+        "
+      >
+        <div class="d-flex">
+          <div class="toast-body text-light" id="toastBody"></div>
+          <button
+            type="button"
+            class="btn-close btn-close-white me-2 m-auto"
+            data-bs-dismiss="toast"
+          ></button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      (function createStars() {
+        const container = document.getElementById("stars-container");
+        for (let i = 0; i < 80; i++) {
+          const star = document.createElement("div");
+          star.classList.add("star");
+          star.style.left = Math.random() * 100 + "%";
+          star.style.top = Math.random() * 100 + "%";
+          star.style.animationDelay = Math.random() * 3 + "s";
+          star.style.width = star.style.height = Math.random() * 3 + 1 + "px";
+          container.appendChild(star);
+        }
+      })();
+
+      (function countdown() {
+        const eid = new Date("2026-03-20T00:00:00");
+        function update() {
+          const now = new Date();
+          const diff = eid - now;
+          if (diff <= 0) {
+            document.getElementById("days").textContent = "🎉";
+            document.getElementById("hours").textContent = "Selamat";
+            document.getElementById("minutes").textContent = "Hari";
+            document.getElementById("seconds").textContent = "Raya!";
+            return;
+          }
+          const d = Math.floor(diff / 86400000);
+          const h = Math.floor((diff % 86400000) / 3600000);
+          const m = Math.floor((diff % 3600000) / 60000);
+          const s = Math.floor((diff % 60000) / 1000);
+          document.getElementById("days").textContent = String(d).padStart(
+            2,
+            "0",
+          );
+          document.getElementById("hours").textContent = String(h).padStart(
+            2,
+            "0",
+          );
+          document.getElementById("minutes").textContent = String(m).padStart(
+            2,
+            "0",
+          );
+          document.getElementById("seconds").textContent = String(s).padStart(
+            2,
+            "0",
+          );
+        }
+        update();
+        setInterval(update, 1000);
+      })();
+
+      const thrAmounts = [
+        "Rp 50.000",
+        "Rp 100.000",
+        "Rp 150.000",
+        "Rp 200.000",
+        "Rp 250.000",
+        "Rp 500.000",
+        "Rp 750.000",
+        "Rp 1.000.000",
+        "Rp 2.000.000",
+        "Rp 5.000.000",
+      ];
+
+      function createConfetti() {
+        const colors = [
+          "#D4AF37",
+          "#e74c3c",
+          "#2ecc71",
+          "#3498db",
+          "#f39c12",
+          "#9b59b6",
+          "#1abc9c",
+          "#ff6b6b",
+        ];
+        for (let i = 0; i < 60; i++) {
+          const confetti = document.createElement("div");
+          confetti.classList.add("confetti");
+          confetti.style.left = Math.random() * 100 + "vw";
+          confetti.style.backgroundColor =
+            colors[Math.floor(Math.random() * colors.length)];
+          confetti.style.width = Math.random() * 12 + 5 + "px";
+          confetti.style.height = Math.random() * 12 + 5 + "px";
+          confetti.style.borderRadius = Math.random() > 0.5 ? "50%" : "2px";
+          confetti.style.animationDuration = Math.random() * 2 + 2 + "s";
+          confetti.style.animationDelay = Math.random() * 1.5 + "s";
+          document.body.appendChild(confetti);
+          setTimeout(() => confetti.remove(), 5000);
+        }
+      }
+
+      document
+        .getElementById("openEnvelopeBtn")
+        .addEventListener("click", function () {
+          const envelope = document.getElementById("thrEnvelope");
+          envelope.classList.add("opened");
+
+          setTimeout(() => {
+            document.getElementById("thrStage1").classList.add("d-none");
+            document.getElementById("thrStage2").classList.remove("d-none");
+
+            const amount =
+              thrAmounts[Math.floor(Math.random() * thrAmounts.length)];
+            const el = document.getElementById("thrAmount");
+            el.textContent = amount;
+            el.style.animation = "none";
+            el.offsetHeight;
+            el.style.animation = "pulse-glow 1.5s ease-in-out 3";
+
+            createConfetti();
+          }, 800);
+        });
+
+      document
+        .getElementById("thrEnvelope")
+        .addEventListener("click", function () {
+          document.getElementById("openEnvelopeBtn").click();
+        });
+
+      function resetTHR() {
+        document.getElementById("thrStage1").classList.remove("d-none");
+        document.getElementById("thrStage2").classList.add("d-none");
+        document.getElementById("thrEnvelope").classList.remove("opened");
+      }
+
+      function tryAgain() {
+        resetTHR();
+        setTimeout(() => {
+          document.getElementById("openEnvelopeBtn").click();
+        }, 500);
+      }
+
+      document
+        .getElementById("thrModal")
+        .addEventListener("hidden.bs.modal", resetTHR);
+
+      function shareResult() {
+        const amount = document.getElementById("thrAmount").textContent;
+        const text = `🌙 Ramadan Kareem! Aku baru saja membuka amplop THR dan mendapatkan ${amount}! Coba buka juga yuk! ✨`;
+        if (navigator.share) {
+          navigator.share({ title: "THR Ramadan", text: text });
+        } else {
+          navigator.clipboard
+            .writeText(text)
+            .then(() => showToast("📋 Teks berhasil disalin!"));
+        }
+      }
+
+      const quotes = [
+        {
+          text: "Ramadan adalah bulan di mana pintu-pintu surga dibuka dan pintu-pintu neraka ditutup.",
+          author: "HR. Bukhari",
+        },
+        {
+          text: "Barangsiapa berpuasa di bulan Ramadan karena iman dan mengharap pahala, maka diampuni dosanya yang telah lalu.",
+          author: "HR. Bukhari & Muslim",
+        },
+        {
+          text: "Puasa adalah perisai. Maka janganlah berkata kotor dan jangan pula bertindak bodoh.",
+          author: "HR. Bukhari",
+        },
+        {
+          text: "Sebaik-baik manusia adalah yang paling bermanfaat bagi manusia lain.",
+          author: "HR. Ahmad",
+        },
+        {
+          text: "Sesungguhnya Allah tidak melihat bentuk rupa dan hartamu, tetapi Dia melihat hati dan amalmu.",
+          author: "HR. Muslim",
+        },
+        {
+          text: "Tersenyum di hadapan saudaramu adalah sedekah.",
+          author: "HR. Tirmidzi",
+        },
+        {
+          text: "Berbuka puasalah dengan kurma, jika tidak ada maka dengan air, karena air itu suci.",
+          author: "HR. Abu Dawud",
+        },
+        {
+          text: "Doa orang yang berpuasa tidak akan ditolak.",
+          author: "HR. Ibnu Majah",
+        },
+      ];
+
+      function showQuote() {
+        const q = quotes[Math.floor(Math.random() * quotes.length)];
+        document.getElementById("quoteText").textContent = `"${q.text}"`;
+        document.getElementById("quoteAuthor").textContent = `— ${q.author}`;
+        const modal = bootstrap.Modal.getOrCreateInstance(
+          document.getElementById("quoteModal"),
+        );
+        modal.show();
+      }
+
+      let dhikrCount = 0;
+
+      document
+        .getElementById("dhikrSelect")
+        .addEventListener("change", function () {
+          document.getElementById("dhikrText").textContent = this.value;
+          dhikrCount = 0;
+          document.getElementById("dhikrCount").textContent = "0";
+        });
+
+      function showDhikr() {
+        const modal = bootstrap.Modal.getOrCreateInstance(
+          document.getElementById("dhikrModal"),
+        );
+        modal.show();
+      }
+
+      function incrementDhikr() {
+        dhikrCount++;
+        const el = document.getElementById("dhikrCount");
+        el.textContent = dhikrCount;
+        el.style.transform = "scale(1.3)";
+        setTimeout(() => (el.style.transform = "scale(1)"), 150);
+
+        if (dhikrCount % 33 === 0) {
+          showToast(
+            `✨ Masya Allah! ${dhikrCount}x ${document.getElementById("dhikrSelect").value}`,
+          );
+        }
+      }
+
+      function resetDhikr() {
+        dhikrCount = 0;
+        document.getElementById("dhikrCount").textContent = "0";
+      }
+
+      function sendDua() {
+        const name = document.getElementById("duaName").value.trim();
+        const text = document.getElementById("duaText").value.trim();
+        if (!text) {
+          showToast("⚠️ Silakan tulis doa terlebih dahulu");
+          return;
+        }
+        document.getElementById("duaSuccess").classList.remove("d-none");
+        document.getElementById("duaName").value = "";
+        document.getElementById("duaText").value = "";
+        setTimeout(() => {
+          document.getElementById("duaSuccess").classList.add("d-none");
+          bootstrap.Modal.getInstance(
+            document.getElementById("duaModal"),
+          ).hide();
+        }, 2500);
+      }
+
+      function showToast(message) {
+        document.getElementById("toastBody").innerHTML = message;
+        const toast = bootstrap.Toast.getOrCreateInstance(
+          document.getElementById("mainToast"),
+        );
+        toast.show();
+      }
+
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+            const navCollapse = document.querySelector(".navbar-collapse");
+            if (navCollapse.classList.contains("show")) {
+              bootstrap.Collapse.getInstance(navCollapse).hide();
+            }
+          }
+        });
+      });
+
+      window.addEventListener("scroll", function () {
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".nav-link");
+        let current = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop - 100;
+          if (scrollY >= sectionTop) current = section.getAttribute("id");
+        });
+        navLinks.forEach((link) => {
+          link.classList.remove("text-gold");
+          if (link.getAttribute("href") === "#" + current)
+            link.classList.add("text-gold");
+        });
+      });
+    </script>
+  </body>
+</html>
